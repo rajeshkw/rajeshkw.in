@@ -1,0 +1,158 @@
+$logo-color : black;
+$logo-color-sub : red;
+
+.kw-header{
+  &__card{
+    margin:1em 0;
+    &-logo{
+      float:left;
+      margin-right: 1.5em;
+      position: relative;
+      font-family: arial;
+      transition: all .2s ease-in-out;
+      //animation: logo 5s infinite;
+      &:hover{
+        transform: scale(1.2);
+        //animation: scale 1s ease-in-out;
+      }
+      img{
+        width: 85px;
+      }
+      &-circle{
+        border: 5px solid #ccc;
+        border-radius: 50%;
+        width: 65px;
+        height: 65px;
+        //box-shadow: 0 0 10px black;
+        //@include background(#ccc,#fff);
+      }
+      &-text{
+        position: absolute;
+        top: 0.7em;
+        font-size: 2.1em;
+        left: 0.3em;
+        &-sub{
+          display: block;
+          font-size: 5px;
+          text-align: center;
+        }
+        &-bar{
+          position: absolute;
+          font-size: 2.1em;
+          top: 0.64em;
+          left: 0.35em;
+          &-block{
+            display: block;
+            width:21px;
+            height:3.8px;
+            background-color:  #d80000;
+          }
+        }
+      }
+    }
+    &-text{
+      &-title{
+        font-size: 2em;
+        margin:0.5em 0.5em 0.2em 0em;
+      }
+      &-sub{
+        font-size: 1em;
+      }
+    }
+  }
+  &__experience{
+    background-color: darkblue;
+    color: white;
+    padding: 1em;
+    border-radius: 1em;
+    width: 7.3em;
+    margin: 2em 0;
+  }
+  &__nav{
+    float:right;
+    margin:2em 0;
+    @include breakpoint(xs s m l){
+
+      ul{
+        li{
+          width: 100%;
+          a{
+            &.hire-me{
+              animation: none !important;
+            }
+          }
+        }
+      }
+      &-links{
+        display: none;
+        position: absolute;
+        top:-5em;
+        background-color: white;
+        z-index: 9;
+        width: 100%;
+        right: 0;
+        border-bottom: 3px solid #ccc;
+        transition: all 3s ease-in-out;
+        &.open{
+          display: block;
+          top: 0em;
+        }
+      }
+      &-button{
+        position: absolute;
+        top: -5em;
+        right:0;
+        padding: 10px 10px 5px 10px;
+        width: 52px;
+        &-arrow{
+          display: block;
+          width:30px;
+          margin-bottom: 5px;
+          border-top:1px solid black;
+          transition: all .5s ease-in-out;
+        }
+        &.open{
+          .kw-header__nav-button-arrow{
+            &:first-child{
+              transform: rotate(45deg);
+            }
+            &:nth-child(2){
+              transform: rotate(-45deg);
+              margin-top: -5px;
+            }
+          }
+        }
+      }
+    };
+
+    ul{
+      li{
+        float:right;
+        a{
+          display: block;
+          padding:1em;
+          text-decoration: none;
+          color:black;
+          @include breakpoint(xl){
+            font-size: 1.2em;
+          }
+          &.hire-me{
+            animation: wibble 0.82s cubic-bezier(.36,.07,.19,.97) infinite;
+            transform: translate3d(0, 0, 0);
+            backface-visibility: hidden;
+            perspective: 1000px;
+          }
+          &.active{
+            border:1px solid #ccc;
+            &:hover{
+              animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+              transform: translate3d(0, 0, 0);
+              backface-visibility: hidden;
+              perspective: 1000px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,20 @@
+.kw-social{
+  margin-bottom: 1em;
+  overflow: hidden;
+  ul{
+    li{
+      float:left;
+      width:33.33%;
+      a{
+        font-size: 1.2em;
+        display: block;
+        padding:0.5em;
+        color:#373737;
+        text-decoration: none;
+        i{
+          margin-right: 1em;
+        }
+      }
+    }
+  }
+}
